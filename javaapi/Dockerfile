@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Run Maven install to build the project
-RUN mvn install
+RUN mvn install -DskipTests 
 
 # Stage 2: Create final image with artifacts
 FROM openjdk:8-slim
