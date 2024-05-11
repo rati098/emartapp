@@ -9,7 +9,7 @@ services:
     ports:
       - 5000:5000
     depends_on:
-      - emongo      
+      - emongo
   webapi:
     build: 
       context: ./javaapi
@@ -34,7 +34,7 @@ services:
     image: nginx:latest
     ports:
       - 80:80
-    restart: always
+    restart: on-failure
     depends_on:
       - api
       - webapi
